@@ -14,11 +14,23 @@
 # create the descriptions to match the requirements above.
 
 class Person
+  attr_reader :first_name, :middle_name, :last_name
+
   def initialize(first_name:, middle_name: nil, last_name:)
     @first_name = first_name
     @middle_name = middle_name
     @last_name = last_name
   end
 
-  # implement your behavior here
+  def full_name
+    middle = ""
+    middle = " #{self.middle_name}" if (self.middle_name.is_a? String) 
+    self.first_name + middle + " #{self.last_name}"
+  end
+
+  # def full_name_with_middle_initial
+  # end
+
+  # def initials
+  # end
 end
