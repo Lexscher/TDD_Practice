@@ -30,10 +30,17 @@ class Person
 
   def full_name_with_middle_initial
     middle = ""
-    middle = " #{self.middle_name[0,1]}." if (self.middle_name.is_a? String) 
+    middle = " #{self.get_first_initial(self.middle_name)}" if (self.middle_name.is_a? String) 
     self.first_name + middle + " #{self.last_name}"
   end
 
-  # def initials
-  # end
+  def initials
+    middle = ""
+    middle = " #{self.get_first_initial(self.middle_name)}" if (self.middle_name.is_a? String) 
+    self.get_first_initial(self.first_name) + middle + " #{self.get_first_initial(self.last_name)}"
+  end
+
+  def get_first_initial(name)
+    name[0,1] + "."
+  end
 end
