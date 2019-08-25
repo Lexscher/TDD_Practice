@@ -15,4 +15,16 @@ class Calculator
   def divide(a, b)
     a / b
   end
+
+  def factorial(a)
+    return 1 if (a == 0)
+    num = a
+    i = 1
+    while i < a
+      num *= i
+      i += 1
+    end
+    num
+  end
+
 end
