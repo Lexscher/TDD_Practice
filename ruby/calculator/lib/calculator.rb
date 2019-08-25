@@ -18,7 +18,7 @@ class Calculator
 
   def factorial(a)
     return 1 if (a == 0)
-    a * factorial(a - 1)
+    (1..a).reduce(:*)
   end
 
 end
