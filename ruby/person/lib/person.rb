@@ -28,8 +28,11 @@ class Person
     self.first_name + middle + " #{self.last_name}"
   end
 
-  # def full_name_with_middle_initial
-  # end
+  def full_name_with_middle_initial
+    middle = ""
+    middle = " #{self.middle_name[0,1]}." if (self.middle_name.is_a? String) 
+    self.first_name + middle + " #{self.last_name}"
+  end
 
   # def initials
   # end
