@@ -15,4 +15,10 @@ class Calculator
   def divide(a, b)
     a / b
   end
+
+  def factorial(a)
+    return 1 if (a == 0)
+    (1..a).reduce(:*)
+  end
+
 end
