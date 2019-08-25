@@ -30,8 +30,18 @@ describe Person do
       end
     end
 
-    # describe "#initials" do
+    describe "#initials" do
+          it "contatenates first initial, middle initial, and last initial with periods and spaces" do
+        ace = Person.new(first_name:  "Ace", middle_name: "D", last_name: "Portogas")
 
-    # end
+        expect(ace.initials).to eq("A. D. P.")
+      end 
+
+      it "does not add an extra space or period if middle name is missing" do
+        jack = Person.new(first_name:  "Jack", last_name: "Napier")
+  
+        expect(jack.initials).to eq("J. N.")
+      end
+    end
 
 end
